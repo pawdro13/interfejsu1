@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>MARCOVY</Machine>
+    <WindowsUser>Daniel</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>017aa8da-912d-4ce5-9075-e7c401876596</PackageIdentityName>
+    <RegisteredManifestChecksum>09D284DAF0BBF80D247EED3A3D8EE0B83582B6980A25727DDBE69612E828DE98</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>017aa8da-912d-4ce5-9075-e7c401876596_1.0.0.0_neutral__ka23bv60pj736</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>017aa8da-912d-4ce5-9075-e7c401876596_ka23bv60pj736!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>017aa8da-912d-4ce5-9075-e7c401876596</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=rwajman</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-05T13:45:07.310</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\XMLexample.exe">
+      <PackagePath>XMLexample.exe</PackagePath>
+      <Modified>2015-05-05T13:50:35.590</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T03:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T03:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T03:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T03:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Common\ReadMe.txt">
+      <PackagePath>Common\ReadMe.txt</PackagePath>
+      <Modified>2014-11-13T11:28:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-05-05T13:45:05.455</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-05-05T13:50:35.246</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-05-05T13:45:06.493</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
