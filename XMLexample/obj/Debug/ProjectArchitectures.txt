@@ -1,1 +1,1 @@
-C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\XMLexample.csproj;neutral
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\XMLexample.csproj;neutral

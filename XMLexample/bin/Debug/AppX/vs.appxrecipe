@@ -14,50 +14,50 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-05-05T13:45:07.310</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\XMLexample.exe">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\XMLexample.exe">
       <PackagePath>XMLexample.exe</PackagePath>
-      <Modified>2015-05-05T13:50:35.590</Modified>
+      <Modified>2015-05-05T15:37:10.618</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2013-07-23T03:01:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2013-07-23T03:01:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2013-07-23T03:01:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2013-07-23T03:01:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Common\ReadMe.txt">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
       <Modified>2014-11-13T11:28:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
       <Modified>2015-05-05T13:45:05.455</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-05-05T13:50:35.246</Modified>
+      <Modified>2015-05-05T15:36:16.404</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <Modified>2015-05-05T13:45:06.493</Modified>
     </AppxPackagedFile>

@@ -106,8 +106,6 @@ namespace XMLexample
 
         #endregion
 
-
-
         String responseBody;
         String[] splitted;
         private async Task GetDates()
@@ -129,9 +127,16 @@ namespace XMLexample
                 string xml_url = @"http://www.nbp.pl/kursy/xml/" + splitted[s] + @".xml";
                 //ProccedWithXML4(xml_url);
                 //listBox_daty.Items.Add(ProccedWithXML4Date(xml_url));
-                listBox_daty.Items.Add("20" + splitted[s].Substring(5, 2) + "-" + splitted[s].Substring(7, 2) + "-" + splitted[s].Substring(9,2));
+                listBox_daty.Items.Insert(0,"20" + splitted[s].Substring(5, 2) + "-" + splitted[s].Substring(7, 2) + "-" + splitted[s].Substring(9,2));
             }
-            listBox_daty.Items.Reverse();
+            
+        }
+
+        private async void pageRoot_Loaded(object sender, RoutedEventArgs e)
+        {
+            myTextBlock.Text = "downloading...";
+            await GetDates();
+            myTextBlock.Text = "finished";
         }
 
         private string ProccedWithXML4Date(String xml_url)
@@ -154,12 +159,7 @@ namespace XMLexample
             listBox_waluty.ItemsSource = data;
         }
 
-        private async void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            myTextBlock.Text = "downloading...";
-            await GetDates();
-            myTextBlock.Text = "finished";
-        }
+
 
         private void listBox_daty_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -182,5 +182,7 @@ namespace XMLexample
         {
 
         }
+
+
     }
 }

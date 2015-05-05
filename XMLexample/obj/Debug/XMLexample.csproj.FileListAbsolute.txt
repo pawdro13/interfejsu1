@@ -29,3 +29,34 @@ C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurr
 C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\obj\Debug\ProjectArchitectures.txt
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\App.g.i.cs
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\App.g.cs
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\MainPage.g.i.cs
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\MainPage.g.cs
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\App.xaml
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\App.xbf
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\XamlSaveStateFile.xml
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\XMLexample.exe
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\XMLexample.pdb
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\App.xbf
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\MainPage.xbf
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\XMLexample.exe
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\XMLexample.pdb
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\resources.pri
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\AppxManifest.xml
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\XMLexample.build.appxrecipe
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\MainPage.xaml
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\MainPage.xbf
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\priconfig.xml
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\priconfig.xml.intermediate
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\layout.resfiles
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\layout.resfiles.intermediate
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\resources.resfiles
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\resources.resfiles.intermediate
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\pri.resfiles
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\pri.resfiles.intermediate
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\qualifiers.txt
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\qualifiers.txt.intermediate
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\ProjectArchitectures.txt

@@ -8,7 +8,7 @@
     xmlns:common="using:XMLexample.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="pageRoot_Loaded">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
@@ -46,7 +46,6 @@
             <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" SelectionChanged="pageTitle_SelectionChanged" Text="Kursy Walut"/>
         </Grid>
-        <Button x:Name="Button" Content="Pobierz dane" HorizontalAlignment="Left" Margin="41,19,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.075,0.474" Click="Button_Click_1"/>
         <ListBox x:Name="listBox_daty" HorizontalAlignment="Left" Height="496" Margin="44,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170" SelectionChanged="listBox_daty_SelectionChanged"/>
         <TextBlock x:Name="myTextBlock" HorizontalAlignment="Left" Margin="238,63,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="13" Width="136" Grid.Row="1"/>
         <ListBox HorizontalAlignment="Left" Height="496" Margin="238,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="354" x:Name="listBox_waluty">

@@ -8,41 +8,41 @@
     <PackageIdentityName>017aa8da-912d-4ce5-9075-e7c401876596</PackageIdentityName>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\XMLexample.exe">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\XMLexample.exe">
       <PackagePath>XMLexample.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\Common\ReadMe.txt">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\04 - XMLexampleWithFormatedDatesOfCurrency\XMLexample\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
