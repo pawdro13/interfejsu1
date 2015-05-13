@@ -14,6 +14,15 @@
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">My Application</x:String>
     </Page.Resources>
+    <Page.TopAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="UpdateDataButton" Label="Pobierz dane" Icon="Refresh" Click="UpdateDataButton_Click"/>
+            <AppBarButton x:Name="CloseApplicationButton1" Label="Zamknij aplikacje" Icon="ClosePane" Click="CloseApplicationButton1_Click"/>
+        </CommandBar>
+    </Page.TopAppBar>
+    <Page.BottomAppBar>
+        <CommandBar/>
+    </Page.BottomAppBar>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -37,14 +46,8 @@
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        VerticalAlignment="Top"
-                        AutomationProperties.Name="Back"
-                        AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" SelectionChanged="pageTitle_SelectionChanged" Text="Kursy Walut"/>
+            <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="38,0,112,52" SelectionChanged="pageTitle_SelectionChanged" Text="Kursy Walut" Grid.ColumnSpan="2"/>
         </Grid>
         <ListBox x:Name="listBox_daty" HorizontalAlignment="Left" Height="496" Margin="44,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170" SelectionChanged="listBox_daty_SelectionChanged"/>
         <TextBlock x:Name="myTextBlock" HorizontalAlignment="Left" Margin="238,63,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="13" Width="136" Grid.Row="1"/>

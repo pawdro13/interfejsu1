@@ -57,6 +57,8 @@ namespace XMLexample
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+                //Register root frame to suspension menager
+                XMLexample.Common.SuspensionManager.RegisterFrame(rootFrame, "appFrame");
                 // Set the default language
                 rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
 

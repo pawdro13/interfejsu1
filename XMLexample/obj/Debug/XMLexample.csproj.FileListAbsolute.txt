@@ -60,3 +60,12 @@ C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\
 C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\ProjectArchitectures.txt
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\SecondPage.g.i.cs
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\SecondPage.g.cs
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\SecondPage.xaml
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\obj\Debug\SecondPage.xbf
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\SecondPage.xbf
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\Microsoft.Advertising.WinRT.UI.winmd
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\Microsoft.Advertising.WinRT.UI.xml
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\MicrosoftAdvertising.winmd
+C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\MicrosoftAdvertising.xml

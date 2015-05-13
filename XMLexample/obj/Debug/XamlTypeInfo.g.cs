@@ -59,6 +59,18 @@ namespace XMLexample.XMLexample_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::XMLexample.XMLexample_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -82,6 +94,18 @@ namespace XMLexample.XMLexample_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::XMLexample.XMLexample_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -124,8 +148,8 @@ namespace XMLexample.XMLexample_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[8];
-            _typeNameTable[0] = "XMLexample.MainPage";
+            _typeNameTable = new string[9];
+            _typeNameTable[0] = "XMLexample.SecondPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "XMLexample.Common.ObservableDictionary";
@@ -133,9 +157,10 @@ namespace XMLexample.XMLexample_XamlTypeInfo
             _typeNameTable[5] = "String";
             _typeNameTable[6] = "XMLexample.Common.NavigationHelper";
             _typeNameTable[7] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[8] = "XMLexample.MainPage";
 
-            _typeTable = new global::System.Type[8];
-            _typeTable[0] = typeof(global::XMLexample.MainPage);
+            _typeTable = new global::System.Type[9];
+            _typeTable[0] = typeof(global::XMLexample.SecondPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::XMLexample.Common.ObservableDictionary);
@@ -143,6 +168,7 @@ namespace XMLexample.XMLexample_XamlTypeInfo
             _typeTable[5] = typeof(global::System.String);
             _typeTable[6] = typeof(global::XMLexample.Common.NavigationHelper);
             _typeTable[7] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[8] = typeof(global::XMLexample.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -177,8 +203,9 @@ namespace XMLexample.XMLexample_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::XMLexample.MainPage(); }
+        private object Activate_0_SecondPage() { return new global::XMLexample.SecondPage(); }
         private object Activate_3_ObservableDictionary() { return new global::XMLexample.Common.ObservableDictionary(); }
+        private object Activate_8_MainPage() { return new global::XMLexample.MainPage(); }
         private void MapAdd_3_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -197,9 +224,9 @@ namespace XMLexample.XMLexample_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  XMLexample.MainPage
+            case 0:   //  XMLexample.SecondPage
                 userType = new global::XMLexample.XMLexample_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+                userType.Activator = Activate_0_SecondPage;
                 userType.AddMemberName("DefaultViewModel");
                 userType.AddMemberName("NavigationHelper");
                 xamlType = userType;
@@ -237,17 +264,88 @@ namespace XMLexample.XMLexample_XamlTypeInfo
             case 7:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::XMLexample.XMLexample_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 8:   //  XMLexample.MainPage
+                userType = new global::XMLexample.XMLexample_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_MainPage;
+                userType.AddMemberName("DefaultViewModel");
+                userType.AddMemberName("NavigationHelper");
+                xamlType = userType;
+                break;
             }
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    _otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::Microsoft.Advertising.WinRT.UI.XamlAdControl_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                }
+                return _otherProviders;
+            }
+        }
 
-        private object get_0_MainPage_DefaultViewModel(object instance)
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private object get_0_SecondPage_DefaultViewModel(object instance)
+        {
+            var that = (global::XMLexample.SecondPage)instance;
+            return that.DefaultViewModel;
+        }
+        private object get_1_SecondPage_NavigationHelper(object instance)
+        {
+            var that = (global::XMLexample.SecondPage)instance;
+            return that.NavigationHelper;
+        }
+        private object get_2_MainPage_DefaultViewModel(object instance)
         {
             var that = (global::XMLexample.MainPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_1_MainPage_NavigationHelper(object instance)
+        private object get_3_MainPage_NavigationHelper(object instance)
         {
             var that = (global::XMLexample.MainPage)instance;
             return that.NavigationHelper;
@@ -260,16 +358,28 @@ namespace XMLexample.XMLexample_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "XMLexample.SecondPage.DefaultViewModel":
+                userType = (global::XMLexample.XMLexample_XamlTypeInfo.XamlUserType)GetXamlTypeByName("XMLexample.SecondPage");
+                xamlMember = new global::XMLexample.XMLexample_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "XMLexample.Common.ObservableDictionary");
+                xamlMember.Getter = get_0_SecondPage_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "XMLexample.SecondPage.NavigationHelper":
+                userType = (global::XMLexample.XMLexample_XamlTypeInfo.XamlUserType)GetXamlTypeByName("XMLexample.SecondPage");
+                xamlMember = new global::XMLexample.XMLexample_XamlTypeInfo.XamlMember(this, "NavigationHelper", "XMLexample.Common.NavigationHelper");
+                xamlMember.Getter = get_1_SecondPage_NavigationHelper;
+                xamlMember.SetIsReadOnly();
+                break;
             case "XMLexample.MainPage.DefaultViewModel":
                 userType = (global::XMLexample.XMLexample_XamlTypeInfo.XamlUserType)GetXamlTypeByName("XMLexample.MainPage");
                 xamlMember = new global::XMLexample.XMLexample_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "XMLexample.Common.ObservableDictionary");
-                xamlMember.Getter = get_0_MainPage_DefaultViewModel;
+                xamlMember.Getter = get_2_MainPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "XMLexample.MainPage.NavigationHelper":
                 userType = (global::XMLexample.XMLexample_XamlTypeInfo.XamlUserType)GetXamlTypeByName("XMLexample.MainPage");
                 xamlMember = new global::XMLexample.XMLexample_XamlTypeInfo.XamlMember(this, "NavigationHelper", "XMLexample.Common.NavigationHelper");
-                xamlMember.Getter = get_1_MainPage_NavigationHelper;
+                xamlMember.Getter = get_3_MainPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             }

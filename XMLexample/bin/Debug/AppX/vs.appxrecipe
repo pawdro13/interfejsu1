@@ -6,7 +6,7 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>017aa8da-912d-4ce5-9075-e7c401876596</PackageIdentityName>
-    <RegisteredManifestChecksum>09D284DAF0BBF80D247EED3A3D8EE0B83582B6980A25727DDBE69612E828DE98</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>FDFB1BED5642FAB56EB7CD4BB487E2A22368CFD2392C495E8303009110B62213</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>017aa8da-912d-4ce5-9075-e7c401876596_1.0.0.0_neutral__ka23bv60pj736</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>017aa8da-912d-4ce5-9075-e7c401876596_ka23bv60pj736!App</RegisteredUserModeAppID>
     <RegisteredPackageID>017aa8da-912d-4ce5-9075-e7c401876596</RegisteredPackageID>
@@ -17,13 +17,37 @@
     <AppXManifest Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-05T13:45:07.310</Modified>
+      <Modified>2015-05-13T13:18:09.760</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\XMLexample.exe">
       <PackagePath>XMLexample.exe</PackagePath>
-      <Modified>2015-05-05T15:37:10.618</Modified>
+      <Modified>2015-05-13T15:14:09.448</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingXaml\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI.winmd">
+      <PackagePath>Microsoft.Advertising.WinRT.UI.winmd</PackagePath>
+      <Modified>2013-09-13T10:42:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingXaml\8.1\References\CommonConfiguration\neutral\MicrosoftAdvertising.winmd">
+      <PackagePath>MicrosoftAdvertising.winmd</PackagePath>
+      <Modified>2013-09-13T10:42:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingXaml\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI\AdSettingsFlyout.xbf">
+      <PackagePath>Microsoft.Advertising.WinRT.UI\AdSettingsFlyout.xbf</PackagePath>
+      <Modified>2013-09-13T10:42:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingXaml\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI\Themes\Generic.xbf">
+      <PackagePath>Microsoft.Advertising.WinRT.UI\Themes\Generic.xbf</PackagePath>
+      <Modified>2013-09-13T10:42:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingXaml\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI\bootstrap.html">
+      <PackagePath>Microsoft.Advertising.WinRT.UI\bootstrap.html</PackagePath>
+      <Modified>2013-09-13T10:43:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingXaml\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI\ormma.js">
+      <PackagePath>Microsoft.Advertising.WinRT.UI\ormma.js</PackagePath>
+      <Modified>2013-09-13T10:46:04.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -53,13 +77,17 @@
       <PackagePath>App.xbf</PackagePath>
       <Modified>2015-05-05T13:45:05.455</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\SecondPage.xbf">
+      <PackagePath>SecondPage.xbf</PackagePath>
+      <Modified>2015-05-13T13:18:05.244</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-05-05T15:36:16.404</Modified>
+      <Modified>2015-05-13T13:18:05.246</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-05T13:45:06.493</Modified>
+      <Modified>2015-05-13T13:18:06.410</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

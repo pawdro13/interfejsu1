@@ -128,15 +128,29 @@ namespace XMLexample
                 //ProccedWithXML4(xml_url);
                 //listBox_daty.Items.Add(ProccedWithXML4Date(xml_url));
                 listBox_daty.Items.Insert(0,"20" + splitted[s].Substring(5, 2) + "-" + splitted[s].Substring(7, 2) + "-" + splitted[s].Substring(9,2));
+
             }
             
         }
 
         private async void pageRoot_Loaded(object sender, RoutedEventArgs e)
         {
-            myTextBlock.Text = "downloading...";
+            myTextBlock.Text = "downloading data from NBP Page...";
             await GetDates();
             myTextBlock.Text = "finished";
+            string tmpS = (string)listBox_daty.Items[0].ToString();
+            tmpS = tmpS.Substring(2, 2) + tmpS.Substring(5, 2) + tmpS.Substring(8, 2);
+            foreach (string ss in splitted)
+            {
+                if (!ss.Substring(0, 1).Equals("a"))
+                    continue;
+                if (ss.Substring(5, 6).Equals(tmpS)) //a002z020103
+                {
+                    tmpS = ss;
+                    break;
+                }
+            }
+            ProccedWithXML(@"http://www.nbp.pl/kursy/xml/" + tmpS + @".xml");
         }
 
         private string ProccedWithXML4Date(String xml_url)
@@ -163,7 +177,7 @@ namespace XMLexample
 
         private void listBox_daty_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string tmpS = (string)listBox_daty.SelectedItem;
+            string tmpS = (string)listBox_daty.SelectedItem;            
             tmpS = tmpS.Substring(2,2)+tmpS.Substring(5,2)+tmpS.Substring(8,2);
             foreach (string ss in splitted)
             {
@@ -180,6 +194,46 @@ namespace XMLexample
 
         private void pageTitle_SelectionChanged(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+            
+        }
+
+        private void CloseApplicationButton1_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
+
+        private async void UpdateDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            await GetDates();
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            if (!localSettings.Containers.ContainsKey("exchangeRates"))
+            {
+                localSettings.CreateContainer("exchangeRates", Windows.Storage.ApplicationDataCreateDisposition.Always);
+            }
+           
+            
+            for (int i = 0; i < listBox_waluty.Items.Count(); i++)
+            {
+                
+                XMLexample.Waluta temp = (XMLexample.Waluta)listBox_waluty.Items[i];
+                Windows.Storage.ApplicationDataCompositeValue tempComp = new Windows.Storage.ApplicationDataCompositeValue();
+                if (temp.KodWaluty!=null)
+                tempComp["KodWaluty"] = temp.KodWaluty;
+                if (temp.KursSredni != null) 
+                tempComp["KursSredni"] = temp.KursSredni;
+                if (temp.NazwaKraju != null) 
+                tempComp["NazwaKraju"] = temp.NazwaKraju.ToString();
+                if (temp.Przelicznik != null) 
+                tempComp["Przelicznik"] = temp.Przelicznik.ToString();
+                localSettings.Containers["exchangeRates"].Values[i.ToString()]=tempComp;
+            }
+           
 
         }
 
