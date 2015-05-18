@@ -54,6 +54,7 @@ namespace XMLexample
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+
         }
 
         /// <summary>
@@ -134,25 +135,45 @@ namespace XMLexample
         }
 
         private async void pageRoot_Loaded(object sender, RoutedEventArgs e)
-        {
-            myTextBlock.Text = "downloading data from NBP Page...";
-            await GetDates();
-            myTextBlock.Text = "finished";
-            string tmpS = (string)listBox_daty.Items[0].ToString();
-            tmpS = tmpS.Substring(2, 2) + tmpS.Substring(5, 2) + tmpS.Substring(8, 2);
-            foreach (string ss in splitted)
+        {           
+            // Restore values stored in app data.
+            Windows.Storage.ApplicationDataContainer localSettings =
+                Windows.Storage.ApplicationData.Current.LocalSettings;
+            if (localSettings.Containers.ContainsKey("exchangeRates"))
             {
-                if (!ss.Substring(0, 1).Equals("a"))
-                    continue;
-                if (ss.Substring(5, 6).Equals(tmpS)) //a002z020103
+                for (int i = 0; ; i++)
                 {
-                    tmpS = ss;
-                    break;
+                    if (i<35)
+                    {
+                        XMLexample.Waluta temp = new Waluta();
+                        Windows.Storage.ApplicationDataCompositeValue tempComposite =
+                            (Windows.Storage.ApplicationDataCompositeValue)localSettings.Containers["exchangeRates"].Values[i.ToString()];
+                        if (tempComposite != null)
+                        {
+                            if (tempComposite["KodWaluty"]!=null)
+                            temp.KodWaluty= (string)tempComposite["KodWaluty"];
+                            if (tempComposite["KursSredni"] != null)
+                            temp.KursSredni = (string)tempComposite["KursSredni"];
+                            if (tempComposite["NazwaKraju"] != null)
+                            temp.NazwaKraju = (string)tempComposite["NazwaKraju"];
+                            if (tempComposite["Przelicznik"] != null)
+                            temp.Przelicznik = (string)tempComposite["Przelicznik"];
+                            if (tempComposite["NazwaWaluty"] != null)
+                            temp.NazwaWaluty = (string)tempComposite["NazwaWaluty"];
+                            listBox_waluty.Items.Add(temp);
+                        }
+                    }
+                    else{
+                        break;
+                    }
                 }
             }
-            ProccedWithXML(@"http://www.nbp.pl/kursy/xml/" + tmpS + @".xml");
+            else
+            {
+                myTextBlock.Text = "Brak danych do wyświetlenia";
+            }
         }
-
+       
         private string ProccedWithXML4Date(String xml_url)
         {
             XDocument loadedXML = XDocument.Load(xml_url);
@@ -166,9 +187,9 @@ namespace XMLexample
             var data = from query in loadedXML.Descendants("pozycja")
                        select new Waluta
                        {
-                           NazwaKraju = (string)query.Element("nazwa_kraju"),
-                           KodWaluty = (string)query.Element("kod_waluty"),
-                           KursSredni = (string)query.Element("kurs_sredni")
+                           KursSredni = (string)query.Element("kurs_sredni"),
+                           NazwaWaluty = ((string)query.Element("nazwa_waluty")) == null ? (string)query.Element("nazwa_kraju") : (string)query.Element("nazwa_waluty"),
+                           KodWaluty = (string)query.Element("kod_waluty")
                        };
             listBox_waluty.ItemsSource = data;
         }
@@ -231,6 +252,8 @@ namespace XMLexample
                 tempComp["NazwaKraju"] = temp.NazwaKraju.ToString();
                 if (temp.Przelicznik != null) 
                 tempComp["Przelicznik"] = temp.Przelicznik.ToString();
+                if (temp.NazwaWaluty != null)
+                tempComp["NazwaWaluty"] = temp.NazwaWaluty.ToString();
                 localSettings.Containers["exchangeRates"].Values[i.ToString()]=tempComp;
             }
            
