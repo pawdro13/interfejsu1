@@ -46,12 +46,12 @@
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock x:ConnectionId='5' x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" 
+            <TextBlock x:ConnectionId='6' x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="38,0,112,52"                                               Text="Kursy Walut" Grid.ColumnSpan="2"/>
         </Grid>
         <ListBox x:ConnectionId='4' x:Name="listBox_daty" HorizontalAlignment="Left" Height="496" Margin="44,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="194"                                                 />
         <TextBlock x:Name="myTextBlock" HorizontalAlignment="Left" Margin="525,36,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="40" Width="354" Grid.Row="1" FontSize="24"/>
-        <ListBox HorizontalAlignment="Left" Height="496" Margin="525,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="730" x:Name="listBox_waluty">
+        <ListBox x:ConnectionId='5' HorizontalAlignment="Left" Height="496" Margin="525,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="730" x:Name="listBox_waluty"                                                   >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="10">

@@ -26,7 +26,7 @@ namespace XMLexample
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
+        public int i;
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -258,6 +258,15 @@ namespace XMLexample
             }
            
 
+        }
+
+        private void listBox_waluty_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.Frame != null)
+            {
+                this.Frame.Navigate(typeof(ChartScreen), e.AddedItems[0]);
+                
+            }
         }
 
 

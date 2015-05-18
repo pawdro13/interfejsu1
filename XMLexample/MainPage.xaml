@@ -51,7 +51,7 @@
         </Grid>
         <ListBox x:Name="listBox_daty" HorizontalAlignment="Left" Height="496" Margin="44,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="194" SelectionChanged="listBox_daty_SelectionChanged"/>
         <TextBlock x:Name="myTextBlock" HorizontalAlignment="Left" Margin="525,36,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="40" Width="354" Grid.Row="1" FontSize="24"/>
-        <ListBox HorizontalAlignment="Left" Height="496" Margin="525,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="730" x:Name="listBox_waluty">
+        <ListBox HorizontalAlignment="Left" Height="496" Margin="525,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="730" x:Name="listBox_waluty" SelectionChanged="listBox_waluty_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="10">
