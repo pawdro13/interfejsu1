@@ -6,8 +6,11 @@ using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System.Threading;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -109,42 +112,63 @@ namespace XMLexample
 
         #endregion
 
-
-        private float ProccedWithXML(String xml_url)
+        private string formatDate(DateTime _time)
         {
+            string temp;
+            temp = _time.Date.Day.ToString();
+            temp = temp +"."+ _time.Date.Month.ToString();
+            temp = temp + "." + _time.Date.Year.ToString();
+            return temp;
+        }
+        private string ProccedWithXML(String xml_url)
+        {            
+            //ładuje dokument xml
             XDocument loadedXML = XDocument.Load(xml_url);
+            //textbox info
+            //myTextBlock.Text = "Data publikacji: " + (string)loadedXML.Descendants("tabela_kursow").ElementAt(0).Element("data_publikacji");
+            string SYMBOL_WALUTY = "USD";
+            //W liście bedzie tylko 1 obiekt string który będzie posiadał wartość waluty z danego dnia
             var data = from query in loadedXML.Descendants("pozycja")
-                       select new RekordWykres
-                       {
-                           ExchangeRate = (float)query.Element("kurs_sredni")
-                       };
-           // return (float)data.ExchangeRate;
+                       where (string)query.Element("kod_waluty") == SYMBOL_WALUTY
+                       select (string)query.Element("kurs_sredni");
             foreach (String w in data)
             {
                 return w;
             }
+            return "ERROR";
         }
 
 
         String responseBody;
         String[] splitted;
+        
         private async Task GetDates()
         {
             var varDateStart = dateStart.Date;
             var varDateFinish = dateFinish.Date;
+            dataChart.Clear();
+            progressOfLoad.ClearValue(ProgressBar.ValueProperty);
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(new System.Uri("http://www.nbp.pl/kursy/xml/dir.txt"));
+            CoreDispatcher dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
             response.EnsureSuccessStatusCode();
             responseBody = await response.Content.ReadAsStringAsync();
 
             splitted = responseBody.Split('\n');
             for (int s = 0; s < splitted.Length; s++)   //the last one is empty
                 splitted[s] = splitted[s].Trim('\r');
+            TimeSpan maxDay = dateFinish.Date - dateStart.Date;
+            int cntMaxDay = maxDay.Days;
+            progressOfLoad.Maximum = maxDay.Days;
+            for (int s = splitted.Length - 2; s>=0; s--)   //the last one is empty
+            /*{
 
-            for (int s = 0; s < splitted.Length - 1; s++)   //the last one is empty
-            //for (int s = 0; s < 10; s++)   //the last one is empty
-            {
                 DateTime tmp = new DateTime(2000+System.Convert.ToInt32(splitted[s].Substring(5, 2)),System.Convert.ToInt32(splitted[s].Substring(7, 2)),System.Convert.ToInt32(splitted[s].Substring(9, 2)));
+                await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                {
+                    progressOfLoad.Value += 1;
+                    errorConsole.Text = "Downloaded " + progressOfLoad.Value.ToString() + "/" + (splitted.Length - 1).ToString();
+                });
 
                 if (!splitted[s].Substring(0, 1).Equals("a"))
                     continue;
@@ -154,39 +178,59 @@ namespace XMLexample
 
                 RekordWykres tmpRekordWykres = new RekordWykres(tmp, ProccedWithXML(xml_url));
                 dataChart.Add(tmpRekordWykres);
-                //ProccedWithXML4(xml_url);
-                //listBox_daty.Items.Add(ProccedWithXML4Date(xml_url));
-                //listBox_daty.Items.Insert(0, "20" + splitted[s].Substring(5, 2) + "-" + splitted[s].Substring(7, 2) + "-" + splitted[s].Substring(9, 2));
+
+
+
+
+            }*/
+            {
+
+                if (cntMaxDay != 0)
+                { 
+                DateTime tmp = new DateTime(2000 + System.Convert.ToInt32(splitted[s].Substring(5, 2)), System.Convert.ToInt32(splitted[s].Substring(7, 2)), System.Convert.ToInt32(splitted[s].Substring(9, 2)));
+                if (tmp.Date < varDateStart.Date)
+                {
+                    DateTime now = DateTime.Now;
+                    progressOfLoad.Value = progressOfLoad.Maximum;
+                    errorConsole.Text = errorConsole.Text + "\n" + now.ToString() + ": Pobieranie danych zakończone ";
+                    break;
+                }
+                if (!splitted[s].Substring(0, 1).Equals("a"))
+                    continue;
+                if (!(tmp.Date >= varDateStart.Date && tmp.Date <= varDateFinish.Date))
+                    continue;
+                string xml_url = @"http://www.nbp.pl/kursy/xml/" + splitted[s] + @".xml";
+                RekordWykres tmpRekordWykres = new RekordWykres(tmp, ProccedWithXML(xml_url));
+                dataChart.Add(tmpRekordWykres);
+                await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                {
+                    DateTime now = DateTime.Now;
+                    progressOfLoad.Value += 1;
+                    errorConsole.Text = errorConsole.Text + "\n" + now.ToString() + ": Pobrany rekord z dnia  " + formatDate(tmp);
+
+                });
+                cntMaxDay -= 1;
+                }
+                else
+                {
+                    DateTime now = DateTime.Now;
+                    progressOfLoad.Value = progressOfLoad.Maximum;
+                    errorConsole.Text = errorConsole.Text + "\n" + now.ToString() + ": Pobieranie danych zakończone ";
+                    break;
+                }
+
+
 
             }
 
         }
 
-        List<XMLexample.RekordWykres> records = new List<XMLexample.RekordWykres>();
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            var varDateStart = dateStart.Date;
-            var varDateFinish = dateFinish.Date;
-            TimeSpan cnt;
-            int curCnt;
-            cnt = varDateFinish - varDateStart;
-            progressOfLoad.Maximum = cnt.Days;
+            LoadHistory.IsEnabled = false;
             await GetDates();
-
-            await Task.Run(() =>
-            {
-               for(curCnt=0;curCnt<cnt.Days;curCnt++)
-               {
-                   
-               }              
-            });
-            await Task.Run(() =>
-            {
-
-
-            });
-           
-
+            LoadHistory.IsEnabled = true;
+            
         }
         
 

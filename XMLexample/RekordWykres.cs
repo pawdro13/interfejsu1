@@ -9,20 +9,20 @@ namespace XMLexample
     class RekordWykres
     {
         DateTime date;
-        float exchangeRate;
+        string exchangeRate;
 
         public DateTime Date
         {
             get { return date; }
             set { date = value; }
         }
-        public float ExchangeRate
+        public string ExchangeRate
         {
             get { return exchangeRate; }
             set { exchangeRate = value; }
         }
 
-        public RekordWykres(DateTime _date, float _price)
+        public RekordWykres(DateTime _date, string _price)
         {
             date = _date;
             exchangeRate = _price;
