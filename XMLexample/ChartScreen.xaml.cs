@@ -232,7 +232,7 @@ namespace XMLexample
 
             if (!(varDateFinish > varDateStart))
             {
-                errorConsole.Text = "Data początkowa powinna być \nstarsza od końcowej";            
+                errorConsole.Text = "Data początkowa powinna być starsza od końcowej";            
             }
             else
             {
@@ -246,7 +246,7 @@ namespace XMLexample
             var varDateFinish = dateFinish.Date;
             if (!(varDateFinish > varDateStart))
             {
-                errorConsole.Text = "Data początkowa powinna być \nstarsza od końcowej!";
+                errorConsole.Text = "Data początkowa powinna być starsza od końcowej!";
             }
             else
             {
@@ -311,6 +311,29 @@ namespace XMLexample
                 StrokeThickness = _thick,
                 Stroke = new SolidColorBrush(_col)
             });
+            //y axis description
+            TextBlock yDesc = new TextBlock();
+            yDesc.Text = "Kurs waluty";
+            yDesc.Foreground = new SolidColorBrush(Colors.Black);
+            yDesc.FontSize = 20;
+            Canvas.SetLeft(yDesc, leftDrawingMargin - 23);
+            Canvas.SetTop(yDesc, (chartCanvas.Height / 2) + 50);
+            RotateTransform rot = new RotateTransform();
+            rot.Angle = -90;
+            yDesc.RenderTransform = rot;
+            chartCanvas.Children.Add(yDesc);
+
+            //x axis description
+            TextBlock xDesc  = new TextBlock();
+            xDesc.Text = "Data";
+            xDesc.Foreground = new SolidColorBrush(Colors.Black);
+            xDesc.FontSize = 20;
+            Canvas.SetLeft(xDesc, (chartCanvas.Width/2)-25);
+            Canvas.SetTop(xDesc, (chartCanvas.Height ) -bottomDrawingMargin+5);
+            chartCanvas.Children.Add(xDesc);
+
+
+
         }
 
         void GetMinMax(out double min, out double max)
@@ -348,11 +371,25 @@ namespace XMLexample
             Canvas.SetTop(textBlock, _y - 7);
             chartCanvas.Children.Add(textBlock);
         }
+        void DrawDateLevel(Color _col, double _x, string _val)
+        {
+            int i;
+            for (i = 0; i < 5; i++)
+            {
+                chartCanvas.Children.Add(new Line()
+                {
+                    X1 = _x,
+                    Y1 = 38+(i*100),
+                    X2 = _x,
+                    Y2 = 86+(i*100),
+                    StrokeThickness = 1.0,
+                    Stroke = new SolidColorBrush(_col)
+                });
+            }
+        }
 
         void DrawCurrencyHistory(Color _col, double _thick)
         {
-
-                chartCanvas.Children.Clear();
                 if (dataChart.Count < 2)
                     return;
                 double Cmin, Cmax;
@@ -387,6 +424,8 @@ namespace XMLexample
                     prev = r;
                     DrawLevel(Colors.Blue, Ymax, Cmin.ToString("0.00"));
                     DrawLevel(Colors.Blue, Ymin, Cmax.ToString("0.00"));
+                    DrawDateLevel(Colors.Black, Xmin, "STO");
+                    DrawDateLevel(Colors.Black, Xmax, "STO");
                 }
                              
         }
@@ -395,6 +434,7 @@ namespace XMLexample
         {
             if (dataChart.Any())
             {
+                chartCanvas.Children.Clear();
                 DrawAxis(Colors.Black, 4.0);
                 DrawCurrencyHistory(Colors.Red, 5.0);
             }

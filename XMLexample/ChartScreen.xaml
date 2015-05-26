@@ -17,11 +17,7 @@
     </Page.Resources>
     <Page.TopAppBar>
         <CommandBar>
-            <AppBarButton x:Name="ClearCanvas" Label="Wyczyść wykres" Click="ClearCanvas_Click">
-                <AppBarButton.Icon>
-                    <SymbolIcon/>
-                </AppBarButton.Icon>
-            </AppBarButton>
+            <AppBarButton x:Name="ClearCanvas" Label="Wyczyść wykres" Click="ClearCanvas_Click" Icon="Clear"/>
             <AppBarButton x:Name="ExitButtonChart" Label="Zamknij aplikacje" Click="ExitButtonChart_Click">
                 <AppBarButton.Icon>
                     <SymbolIcon x:Name="ExitButton" Symbol="ClosePane"/>
@@ -61,7 +57,7 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
 				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-        <Canvas x:Name="chartCanvas" HorizontalAlignment="Left" Height="525" Margin="419,93,0,0" Grid.Row="1" VerticalAlignment="Top" Width="937" Background="White"/>
+        <Canvas x:Name="chartCanvas" HorizontalAlignment="Left" Height="525" Margin="429,74,0,0" Grid.Row="1" VerticalAlignment="Top" Width="937" Background="White"/>
         <DatePicker x:Name="dateStart" HorizontalAlignment="Left" Margin="36,91,0,0" Grid.Row="1" VerticalAlignment="Top" CalendarIdentifier="GregorianCalendar" Height="65" Header="Data początkowa" MonthVisible="True" YearFormat="{}{year.full}" YearVisible="True" DayFormat="{}{day.integer}" MonthFormat="{}{month.full}" Width="323" DateChanged="dateStart_DateChanged"/>
         <DatePicker x:Name="dateFinish" HorizontalAlignment="Left" Margin="36,155,0,0" Grid.Row="1" VerticalAlignment="Top" Header="Data końcowa" DateChanged="DatePicker_DateChanged" Height="58" Width="280"/>
         <ProgressBar x:Name="progressOfLoad" HorizontalAlignment="Left" Height="31" Margin="36,234,0,0" Grid.Row="1" VerticalAlignment="Top" Width="368"/>
