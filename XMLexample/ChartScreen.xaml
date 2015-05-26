@@ -17,12 +17,16 @@
     </Page.Resources>
     <Page.TopAppBar>
         <CommandBar>
-            <AppBarButton Label="AppBarButton">
+            <AppBarButton x:Name="ClearCanvas" Label="Wyczyść wykres" Click="ClearCanvas_Click">
                 <AppBarButton.Icon>
                     <SymbolIcon/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton Label="AppBarButton" Icon="ClosePane"/>
+            <AppBarButton x:Name="ExitButtonChart" Label="Zamknij aplikacje" Click="ExitButtonChart_Click">
+                <AppBarButton.Icon>
+                    <SymbolIcon x:Name="ExitButton" Symbol="ClosePane"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
         </CommandBar>
     </Page.TopAppBar>
 
@@ -57,16 +61,16 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
 				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-        <Canvas HorizontalAlignment="Left" Height="525" Margin="419,93,0,0" Grid.Row="1" VerticalAlignment="Top" Width="937" Background="White"/>
+        <Canvas x:Name="chartCanvas" HorizontalAlignment="Left" Height="525" Margin="419,93,0,0" Grid.Row="1" VerticalAlignment="Top" Width="937" Background="White"/>
         <DatePicker x:Name="dateStart" HorizontalAlignment="Left" Margin="36,91,0,0" Grid.Row="1" VerticalAlignment="Top" CalendarIdentifier="GregorianCalendar" Height="65" Header="Data początkowa" MonthVisible="True" YearFormat="{}{year.full}" YearVisible="True" DayFormat="{}{day.integer}" MonthFormat="{}{month.full}" Width="323" DateChanged="dateStart_DateChanged"/>
         <DatePicker x:Name="dateFinish" HorizontalAlignment="Left" Margin="36,155,0,0" Grid.Row="1" VerticalAlignment="Top" Header="Data końcowa" DateChanged="DatePicker_DateChanged" Height="58" Width="280"/>
-        <ProgressBar x:Name="progressOfLoad" HorizontalAlignment="Left" Height="31" Margin="36,234,0,0" Grid.Row="1" VerticalAlignment="Top" Width="280"/>
-        <Button x:Name="LoadHistory" Content="Załaduj historie" HorizontalAlignment="Left" Margin="33,281,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="286" Click="Button_Click" Height="38"/>
-        <Button x:Name="SaveChart" Content="Zapisz wykres" HorizontalAlignment="Left" Margin="33,376,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="286" Click="Button_Click" Height="38"/>
-        <Button x:Name="LoadHistory_Copy" Content="Rysuj historie" HorizontalAlignment="Left" Margin="33,332,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="286" Click="Button_Click" Height="38"/>
-        <TextBox HorizontalAlignment="Left" Margin="36,434,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Log Console" VerticalAlignment="Top" Width="280" TextAlignment="Center" Height="32"/>
-        <Grid HorizontalAlignment="Left" Height="115" Margin="36,466,0,0" Grid.Row="1" VerticalAlignment="Top" Width="280" Background="#FFFBF8F8">
-            <TextBlock x:Name="errorConsole" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="95" Width="260" Foreground="Black"/>
+        <ProgressBar x:Name="progressOfLoad" HorizontalAlignment="Left" Height="31" Margin="36,234,0,0" Grid.Row="1" VerticalAlignment="Top" Width="368"/>
+        <Button x:Name="LoadHistory" Content="Załaduj historie" HorizontalAlignment="Left" Margin="33,284,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="172" Click="Button_Click" Height="38"/>
+        <Button x:Name="SaveChart" Content="Zapisz wykres" HorizontalAlignment="Left" Margin="416,34,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="124" Click="Button_Click" Height="38"/>
+        <Button x:Name="WriteHistory" Content="Rysuj historie" HorizontalAlignment="Left" Margin="235,284,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="172" Click="WriteHistory_Click" Height="38" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Margin="36,342,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Log Console" VerticalAlignment="Top" Width="368" TextAlignment="Center" Height="32"/>
+        <Grid HorizontalAlignment="Left" Height="115" Margin="36,374,0,0" Grid.Row="1" VerticalAlignment="Top" Width="368" Background="#FFFBF8F8">
+            <TextBlock x:Name="errorConsole" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="95" Foreground="Black"/>
         </Grid>
     </Grid>
 </Page>
