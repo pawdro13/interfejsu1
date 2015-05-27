@@ -61,12 +61,12 @@
         <DatePicker x:Name="dateStart" HorizontalAlignment="Left" Margin="36,91,0,0" Grid.Row="1" VerticalAlignment="Top" CalendarIdentifier="GregorianCalendar" Height="65" Header="Data początkowa" MonthVisible="True" YearFormat="{}{year.full}" YearVisible="True" DayFormat="{}{day.integer}" MonthFormat="{}{month.full}" Width="323" DateChanged="dateStart_DateChanged"/>
         <DatePicker x:Name="dateFinish" HorizontalAlignment="Left" Margin="36,155,0,0" Grid.Row="1" VerticalAlignment="Top" Header="Data końcowa" DateChanged="DatePicker_DateChanged" Height="58" Width="280"/>
         <ProgressBar x:Name="progressOfLoad" HorizontalAlignment="Left" Height="31" Margin="36,234,0,0" Grid.Row="1" VerticalAlignment="Top" Width="368"/>
-        <Button x:Name="LoadHistory" Content="Załaduj historie" HorizontalAlignment="Left" Margin="33,284,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="172" Click="Button_Click" Height="38"/>
-        <Button x:Name="SaveChart" Content="Zapisz wykres" HorizontalAlignment="Left" Margin="416,34,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="124" Click="Button_Click" Height="38"/>
+        <Button x:Name="LoadHistory" Content="Załaduj historie" HorizontalAlignment="Left" Margin="33,284,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="172" Height="38" Click="LoadHistory_Click"/>
+        <Button x:Name="SaveChart" Content="Zapisz wykres" HorizontalAlignment="Left" Margin="426,34,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="124" Click="SaveChart_Click" Height="38"/>
         <Button x:Name="WriteHistory" Content="Rysuj historie" HorizontalAlignment="Left" Margin="235,284,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.1,-0.013" Width="172" Click="WriteHistory_Click" Height="38" IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Margin="36,342,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Log Console" VerticalAlignment="Top" Width="368" TextAlignment="Center" Height="32"/>
-        <Grid HorizontalAlignment="Left" Height="115" Margin="36,374,0,0" Grid.Row="1" VerticalAlignment="Top" Width="368" Background="#FFFBF8F8">
-            <TextBlock x:Name="errorConsole" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="95" Foreground="Black"/>
-        </Grid>
+        <Grid HorizontalAlignment="Left" Height="115" Margin="36,374,0,0" Grid.Row="1" VerticalAlignment="Top" Width="368" Background="#FFFBF8F8"/>
+        <TextBox x:Name="errorConsole" HorizontalAlignment="Left" Margin="36,374,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="110" Width="355" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible" FontSize="10" TextChanged="errorConsole_TextChanged" IsSpellCheckEnabled="True"/>
+        <TextBlock x:Name="fapfap" HorizontalAlignment="Left" Margin="83,532,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="45" Width="261"/>
     </Grid>
 </Page>

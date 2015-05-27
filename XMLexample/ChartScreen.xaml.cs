@@ -23,6 +23,10 @@ using XMLexample.Common;
 using Windows.Graphics.Imaging;
 using Windows.UI;
 using Windows.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage.Pickers;
+using Windows.Storage;
+using Windows.Storage.Streams;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -180,7 +184,7 @@ namespace XMLexample
                 {
                     DateTime now = DateTime.Now;
                     progressOfLoad.Value = progressOfLoad.Maximum;
-                    errorConsole.Text = errorConsole.Text + "\n" + now.ToString() + ": Pobieranie danych zakończone ";
+                    errorConsole.Text += "\n" + now.ToString() + ": Pobieranie danych zakończone ";
                     break;
                 }
                 if (!splitted[s].Substring(0, 1).Equals("a"))
@@ -192,9 +196,13 @@ namespace XMLexample
                 dataChart.Add(tmpRekordWykres);
                 await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                 {
+                    
                     DateTime now = DateTime.Now;
                     progressOfLoad.Value += 1;
-                    errorConsole.Text = errorConsole.Text + "\n" + now.ToString() + ": Pobrany rekord z dnia  " + formatDate(tmp);
+                    errorConsole.Text  += "\n" + now.ToString() + ": Pobrany rekord z dnia  " + formatDate(tmp);
+                    //errorConsole.SelectedText = errorConsole.Text + "\r\n";
+                    //errorConsole.ScrollToCaret();
+
 
                 });
                 cntMaxDay -= 1;
@@ -203,7 +211,7 @@ namespace XMLexample
                 {
                     DateTime now = DateTime.Now;
                     progressOfLoad.Value = progressOfLoad.Maximum;
-                    errorConsole.Text = errorConsole.Text + "\n" + now.ToString() + ": Pobieranie danych zakończone ";
+                    errorConsole.Text += "\n" + now.ToString() + ": Pobieranie danych zakończone ";
                     dataChart.Reverse();
                     break;
                 }
@@ -213,17 +221,6 @@ namespace XMLexample
             }
 
         }
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-            LoadHistory.IsEnabled = false;
-            await GetDates();
-            LoadHistory.IsEnabled = true;
-            WriteHistory.IsEnabled = true;
-            
-        }
-        
 
         private void DatePicker_DateChanged(object sender, DatePickerValueChangedEventArgs e)
         {
@@ -386,6 +383,13 @@ namespace XMLexample
                     Stroke = new SolidColorBrush(_col)
                 });
             }
+            TextBlock xDesc = new TextBlock();
+            xDesc.Text = _val;
+            xDesc.Foreground = new SolidColorBrush(Colors.Black);
+            xDesc.FontSize = 15;
+            Canvas.SetLeft(xDesc, _x-25);
+            Canvas.SetTop(xDesc, (chartCanvas.Height) - bottomDrawingMargin + 5);
+            chartCanvas.Children.Add(xDesc);
         }
 
         void DrawCurrencyHistory(Color _col, double _thick)
@@ -424,8 +428,8 @@ namespace XMLexample
                     prev = r;
                     DrawLevel(Colors.Blue, Ymax, Cmin.ToString("0.00"));
                     DrawLevel(Colors.Blue, Ymin, Cmax.ToString("0.00"));
-                    DrawDateLevel(Colors.Black, Xmin, "STO");
-                    DrawDateLevel(Colors.Black, Xmax, "STO");
+                    DrawDateLevel(Colors.Black, Xmin, formatDate(dataChart[0].Date));
+                    DrawDateLevel(Colors.Black, Xmax, formatDate(dataChart[dataChart.Count()-1].Date));
                 }
                              
         }
@@ -462,8 +466,51 @@ namespace XMLexample
             chartCanvas.Children.Clear();
         }
 
+        private void errorConsole_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
-        
+        }
+
+        private async void LoadHistory_Click(object sender, RoutedEventArgs e)
+        {
+            LoadHistory.IsEnabled = false;
+            WriteHistory.IsEnabled = false;
+            await GetDates();
+            LoadHistory.IsEnabled = true;
+            WriteHistory.IsEnabled = true;
+        }
+
+        private async Task CreateSaveBitmapAsync(Canvas canvas)
+        {
+            if (canvas != null)
+            {
+                //tworzy bitmape
+                RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
+                await renderTargetBitmap.RenderAsync(canvas);
+                var pixels = await renderTargetBitmap.GetPixelsAsync();
+                //filepicker wybieramy gdzie zapisać
+                var picker = new FileSavePicker();
+                picker.FileTypeChoices.Add("JPEG Image", new string[] { ".jpg" });
+                StorageFile file = await picker.PickSaveFileAsync();
+                if (file != null)
+                {
+                    using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                    {
+                        var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream);
+                        //var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.BmpEncoderId, stream);
+                        byte[] bytes = pixels.ToArray();
+                        encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Ignore, (uint)canvas.ActualWidth, (uint)canvas.ActualHeight, 96, 96, bytes);
+                        await encoder.FlushAsync();
+                    }
+                }
+            }
+        }
+
+        private void SaveChart_Click(object sender, RoutedEventArgs e)
+        {
+            CreateSaveBitmapAsync(chartCanvas);
+        }
+
 
 
 
