@@ -438,9 +438,11 @@ namespace XMLexample
         {
             if (dataChart.Any())
             {
+                DateTime now = DateTime.Now;
                 chartCanvas.Children.Clear();
                 DrawAxis(Colors.Black, 4.0);
                 DrawCurrencyHistory(Colors.Red, 5.0);
+                errorConsole.Text += "\n" + now.ToString() + ": Rysowanie historii zakończone ";
             }
             else
             {

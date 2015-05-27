@@ -37,8 +37,38 @@
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+
+        <!-- Back button and page title -->
+        <ListBox Grid.Row="1" x:Name="listBox_waluty" SelectionChanged="listBox_waluty_SelectionChanged" HorizontalAlignment="Left" Width="718">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="10">
+
+                        <Grid Margin="0,5,0,0" Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Nazwa Waluty: " Grid.Column="0" Grid.Row="0"/>
+                            <TextBlock Text="{Binding NazwaWaluty}" Grid.Column="1" Grid.Row="0"/>
+                            <TextBlock Text="Kod Waluty: " Grid.Column="0" Grid.Row="1"/>
+                            <TextBlock Text="{Binding KodWaluty}" Grid.Column="1" Grid.Row="1"/>
+                            <TextBlock Text="Kurs Średni: " Grid.Column="0" Grid.Row="2"/>
+                            <TextBlock Text="{Binding KursSredni}" Grid.Column="1" Grid.Row="2"/>
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <!-- Back button and page title -->
         <Grid>
@@ -49,26 +79,19 @@
             <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="38,0,112,52" SelectionChanged="pageTitle_SelectionChanged" Text="Kursy Walut" Grid.ColumnSpan="2"/>
         </Grid>
-        <ListBox x:Name="listBox_daty" HorizontalAlignment="Left" Height="496" Margin="44,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="194" SelectionChanged="listBox_daty_SelectionChanged"/>
-        <TextBlock x:Name="myTextBlock" HorizontalAlignment="Left" Margin="525,36,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="40" Width="354" Grid.Row="1" FontSize="24"/>
-        <ListBox HorizontalAlignment="Left" Height="496" Margin="525,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="730" x:Name="listBox_waluty" SelectionChanged="listBox_waluty_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Margin="10">
-                        <Grid d:DesignHeight="50" Margin="0,5,0,0" >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="250"/>
-                                <ColumnDefinition Width="90"/>
-                                <ColumnDefinition Width="90"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding NazwaWaluty}" Grid.Column="0"/>
-                            <TextBlock Text="{Binding KodWaluty}" Grid.Column="1"/>
-                            <TextBlock Text="{Binding KursSredni}" Grid.Column="2"/>
-                        </Grid>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListBox x:Name="listBox_daty" Grid.Row="1" SelectionChanged="listBox_daty_SelectionChanged" Margin="0,0,10,0" HorizontalAlignment="Right" Width="247"/>
+        <TextBlock x:Name="myTextBlock" HorizontalAlignment="Center" Margin="723,10,289,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="354" Grid.Row="1" FontSize="24">
+        	<Run/>
+        	<LineBreak/>
+        	<Run/>
+        </TextBlock>
+
+        <StackPanel HorizontalAlignment="Center" Height="298" Margin="750,179,294,151" Grid.Row="1" VerticalAlignment="Center" Width="322">
+            <StackPanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/world-economy-512.png"/>
+            </StackPanel.Background>
+        </StackPanel>
+
+
     </Grid>
 </Page>

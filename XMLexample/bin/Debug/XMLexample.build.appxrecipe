@@ -51,6 +51,9 @@
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\world-economy-512.png">
+      <PackagePath>Assets\world-economy-512.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
     </AppxPackagedFile>

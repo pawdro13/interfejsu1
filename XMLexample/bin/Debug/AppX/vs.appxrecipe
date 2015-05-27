@@ -17,13 +17,13 @@
     <AppXManifest Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-18T15:26:33.921</Modified>
+      <Modified>2015-05-27T09:37:06.906</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\XMLexample.exe">
       <PackagePath>XMLexample.exe</PackagePath>
-      <Modified>2015-05-27T07:02:58.676</Modified>
+      <Modified>2015-05-27T10:13:47.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingXaml\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI.winmd">
       <PackagePath>Microsoft.Advertising.WinRT.UI.winmd</PackagePath>
@@ -69,6 +69,10 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2013-07-23T03:01:02.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Assets\world-economy-512.png">
+      <PackagePath>Assets\world-economy-512.png</PackagePath>
+      <Modified>2015-05-27T09:36:51.170</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
       <Modified>2014-11-13T11:28:18.000</Modified>
@@ -79,7 +83,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\ChartScreen.xbf">
       <PackagePath>ChartScreen.xbf</PackagePath>
-      <Modified>2015-05-27T07:02:23.997</Modified>
+      <Modified>2015-05-27T09:57:26.112</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\SecondPage.xbf">
       <PackagePath>SecondPage.xbf</PackagePath>
@@ -87,11 +91,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-05-18T20:16:54.176</Modified>
+      <Modified>2015-05-27T10:13:46.566</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\Desktop\Platformy mobilne\PM_WindowsStore-Aplication\XMLexample\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-18T15:26:30.974</Modified>
+      <Modified>2015-05-27T09:37:04.731</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
